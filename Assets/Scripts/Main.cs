@@ -6,8 +6,9 @@ namespace Platformer
     public class Main : MonoBehaviour
     {
         [SerializeField] private SpriteAnimatorConfig _playerConfig;
-        [SerializeField] private int _animationSpeed = 15;
-        [SerializeField] private LevelObjectView _playerView;
+
+        [SerializeField] private CharacterDescription _playerDescription;
+        [SerializeField] private GameObject _spawnPoint;
 
         private SpriteAnimatorController _playerAnimator;
         private PlayerController _playerController;
@@ -15,7 +16,7 @@ namespace Platformer
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
-            _playerController = new PlayerController(_playerView, _playerAnimator);
+            _playerController = PlayerController.CreatePlayer(_playerDescription, _spawnPoint.transform, _playerAnimator);
         }
         void Update()
         {
