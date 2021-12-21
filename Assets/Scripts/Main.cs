@@ -10,15 +10,16 @@ namespace Platformer
         [SerializeField] private LevelObjectView _playerView;
 
         private SpriteAnimatorController _playerAnimator;
+        private PlayerController _playerController;
         private void Awake()
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
             _playerAnimator = new SpriteAnimatorController(_playerConfig);
-            _playerAnimator.StartAnimation(_playerView.SpriteRenderer, AnimState.Run, true, _animationSpeed);
+            _playerController = new PlayerController(_playerView, _playerAnimator);
         }
         void Update()
         {
-            _playerAnimator.Update();
+            _playerController.Update();
         }
     }
 }
