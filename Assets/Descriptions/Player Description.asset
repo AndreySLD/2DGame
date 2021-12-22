@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Player Description
   m_EditorClassIdentifier: 
   _maxHealth: 0
-  _movementSpeed: 3
+  _movementSpeed: 150
   _movingTreshhold: 0.1
   _jumpSpeed: 9
   _jumpTreshhold: 1

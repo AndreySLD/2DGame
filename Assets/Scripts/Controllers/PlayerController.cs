@@ -16,38 +16,40 @@ namespace Platformer
         private float _g = -9.8f;
         private float _groundLevel = 0.5f;
         private float _yVelocity = 0f;
+        private float _xVelocity = 0f;
 
         private LevelObjectView _view;
         private SpriteAnimatorController _playerAnimator;
         private PlayerModel _playerModel;
+        private ContactPooler _contactPooler;
 
-        public PlayerController (LevelObjectView playerView, PlayerModel playerModel, SpriteAnimatorController playerAnimator)
+        public PlayerController (LevelObjectView playerView, PlayerModel playerModel, SpriteAnimatorController playerAnimator, ContactPooler contactPooler)
         {
             _view = playerView;
             _playerModel = playerModel;
             _playerAnimator = playerAnimator;
-            _playerAnimator.StartAnimation(_view.SpriteRenderer, AnimState.Idle, true, _animationSpeed);
+            _contactPooler = contactPooler;
+            _playerAnimator.StartAnimation(_view.SpriteRenderer, AnimState.Idle, true, _animationSpeed);           
         }
         public static PlayerController CreatePlayer(CharacterDescription description, Transform spawnPoint, SpriteAnimatorController playerAnimator)
         {
             var playerView = GameObject.Instantiate(description.Prefab, spawnPoint).GetComponent<LevelObjectView>();
             var playerModel = new PlayerModel(description);
-            var player = new PlayerController(playerView, playerModel, playerAnimator);
-            
+            var contactPooler = new ContactPooler(playerView.Collider);
+            var player = new PlayerController(playerView, playerModel, playerAnimator, contactPooler);
+
             return player;
-        }       
+        }
         private void MoveTowards()
         {
-            _view.Transform.position += Vector3.right * Time.deltaTime * _playerModel.MovementSpeed * (_xAxisInput < 0 ? -1 : 1);
+            _xVelocity = (Time.fixedDeltaTime * _playerModel.MovementSpeed * (_xAxisInput < 0 ? -1 : 1));
+            _view.Rigidbody.velocity = _view.Rigidbody.velocity.Change(x: _xVelocity);
             _view.Transform.localScale = _xAxisInput < 0 ? _leftScale : _rightScale;
-        }
-        public bool IsGrounded()
-        {
-            return _view.Transform.position.y <= _groundLevel && _yVelocity <= 0;
         }
         public void Update()
         {
             _playerAnimator.Update();
+            _contactPooler.Update();
             _xAxisInput = Input.GetAxis("Horizontal");
             _isInTheAir = Input.GetAxis("Vertical") > 0;
             _isMoving = Mathf.Abs(_xAxisInput) > _playerModel.MovingTreshhold;
@@ -56,13 +58,13 @@ namespace Platformer
             {
                 MoveTowards();
             }
-            if (IsGrounded())
+            if (_contactPooler.IsGrounded)
             {
                 _playerAnimator.StartAnimation(_view.SpriteRenderer, _isMoving ? AnimState.Run : AnimState.Idle, true, _animationSpeed);
 
-                if (_isInTheAir && _yVelocity <= 0)
+                if (_isInTheAir && Mathf.Abs(_view.Rigidbody.velocity.y) <= _playerModel.JumpTreshhold)
                 {
-                    _yVelocity = _playerModel.JumpSpeed;
+                    _view.Rigidbody.AddForce(Vector2.up * _playerModel.JumpSpeed, ForceMode2D.Impulse);
                 }
                 else if (_yVelocity < 0)
                 {
@@ -73,13 +75,10 @@ namespace Platformer
             }
             else
             {
-                if (Mathf.Abs(_yVelocity) > _playerModel.JumpTreshhold)
+                if (Mathf.Abs(_view.Rigidbody.velocity.y) > _playerModel.JumpTreshhold)
                 {
                     _playerAnimator.StartAnimation(_view.SpriteRenderer, AnimState.Jump, true, _animationSpeed);
                 }
-
-                _yVelocity += _g * Time.deltaTime;
-                _view.Transform.position += Vector3.up * (Time.deltaTime * _yVelocity);
             }
         }
         public void Dispose()

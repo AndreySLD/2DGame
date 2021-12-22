@@ -11,10 +11,20 @@ namespace Platformer
         private float _angle;
         private Vector3 _axis;
 
-        public CannonAimController(Transform muzzleTransform, Transform targetTransform)
+        public CannonView _cannonView;
+
+        public CannonAimController(CannonView cannonView, Transform targetTransform)
         {
-            _muzzleTransform = muzzleTransform;
+            _cannonView = cannonView;
+            _muzzleTransform = cannonView.MuzzleTransform;
             _targetTransform = targetTransform;
+        }
+        public static CannonAimController InitializeCannon(GameObject prefab, Transform spawnPoint) 
+        {
+            var cannonView = Object.Instantiate(prefab, spawnPoint).GetComponent<CannonView>();
+            var targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            var cannon = new CannonAimController(cannonView, targetTransform);
+            return cannon;
         }
         public void Update()
         {

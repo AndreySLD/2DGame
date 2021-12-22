@@ -9,7 +9,5 @@ namespace Platformer
         public SpriteRenderer SpriteRenderer;
         public Collider2D Collider;
         public Rigidbody2D Rigidbody;
-
-
     }
 }
