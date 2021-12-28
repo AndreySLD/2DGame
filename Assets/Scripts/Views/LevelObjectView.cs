@@ -9,5 +9,13 @@ namespace Platformer
         public SpriteRenderer SpriteRenderer;
         public Collider2D Collider;
         public Rigidbody2D Rigidbody;
+
+        public Action<LevelObjectView> OnLevelObjectContact { get; set; }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            LevelObjectView levelObject = collision.gameObject.GetComponent<LevelObjectView>();
+            OnLevelObjectContact?.Invoke(levelObject);
+        }
     }
 }
