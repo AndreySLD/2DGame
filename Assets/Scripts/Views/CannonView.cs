@@ -9,5 +9,7 @@ namespace Platformer
         public Transform MuzzleTransform;
         public Transform ShootPointTransform;
         public List<LevelObjectView> Bullets;
+        public float ShotRange;
+        public float RotationAngle;
     }
 }

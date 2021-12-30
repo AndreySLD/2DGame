@@ -27,12 +27,14 @@ namespace Platformer
             return cannon;
         }
         public void Update()
-        {
-            _dir = _targetTransform.position - _muzzleTransform.position;
-            _angle = Vector3.Angle(Vector3.down, _dir);
+        {                            
+            _dir = _targetTransform.position - _muzzleTransform.position;               
+            _angle = Vector3.Angle(Vector3.down, _dir);               
             _axis = Vector3.Cross(Vector3.down, _dir);
 
-            _muzzleTransform.rotation = Quaternion.AngleAxis(_angle, _axis);
+            //if (_angle <= _cannonView.RotationAngle)
+            _muzzleTransform.rotation = Quaternion.AngleAxis(_angle, _axis);           
+            //else _muzzleTransform.rotation = Quaternion.AngleAxis(0, Vector3.down);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace Platformer
         private float _yVelocity = 0f;
         private float _xVelocity = 0f;
 
-        private LevelObjectView _view;
+        public LevelObjectView _view;
         private SpriteAnimatorController _playerAnimator;
         private PlayerModel _playerModel;
         private ContactPooler _contactPooler;
