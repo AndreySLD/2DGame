@@ -38,6 +38,7 @@ namespace Platformer
 
             _levelGeneratorController = new LevelGeneratorController(_generatorView);
             _levelGeneratorController.Init();
+
         }
         void Update()
         {           

@@ -186,17 +186,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_PrefabInstance: {fileID: 1750057794}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &208831788 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
-  m_PrefabInstance: {fileID: 1750057794}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f54a88d9262bde48924c0d7ae782848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &314895116
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,8 +853,8 @@ MonoBehaviour:
   - {fileID: 1686026575}
   - {fileID: 430562651}
   - {fileID: 172514689}
-  - {fileID: 208831788}
   _generatorView: {fileID: 494811580}
+  _singleQuestView: {fileID: 2088424592}
 --- !u!4 &1189301784
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,7 +1282,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_Name
-      value: Coin (9)
+      value: (Quest)Coin (9)
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_RootOrder
@@ -1339,7 +1328,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
 --- !u!1 &1824988675
 GameObject:
@@ -1694,6 +1684,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2088424589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 1750057794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &2088424590 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3769383491797702213, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 1750057794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2088424591 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1285025014272271802, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 1750057794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2088424592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088424589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6ec99c8379e144fb8608bedcae7f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Transform: {fileID: 208831787}
+  SpriteRenderer: {fileID: 2088424591}
+  Collider: {fileID: 2088424590}
+  Rigidbody: {fileID: 0}
+  _id: 0
+  _completedColor: {r: 1, g: 0, b: 0, a: 1}
+  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2136915146
 GameObject:
   m_ObjectHideFlags: 0
