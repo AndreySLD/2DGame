@@ -13,6 +13,7 @@ namespace Platformer
         [SerializeField] private GameObject _cannonPrefab;
         [SerializeField] private List<LevelObjectView> _coinViews;
         [SerializeField] private LevelGeneratorView _generatorView;
+        [SerializeField] private QuestView _questView;
 
 
         private SpriteAnimatorController _playerAnimator;
@@ -23,6 +24,9 @@ namespace Platformer
         private ShotPointerController _shotPointerController;
         private CoinsManager _coinsManager;
         private LevelGeneratorController _levelGeneratorController;
+        private QuestConfiguratorController _questConfiguratorController;
+
+
         private void Awake()
         {
             _playerConfig = Resources.Load<SpriteAnimatorConfig>("PlayerAnimCfg");
@@ -38,6 +42,9 @@ namespace Platformer
 
             _levelGeneratorController = new LevelGeneratorController(_generatorView);
             _levelGeneratorController.Init();
+
+            _questConfiguratorController = new QuestConfiguratorController(_questView);
+            _questConfiguratorController.Init();
 
         }
         void Update()

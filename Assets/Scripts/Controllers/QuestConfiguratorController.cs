@@ -38,11 +38,12 @@ namespace Platformer
 
             _questFactiories.Add(QuestType.Coins, () => new CoinQuestModel());
             _questStoryFactories.Add(QuestStoryType.Common, questCollection => new QuestStoryController(questCollection));
+            _questStoryFactories.Add(QuestStoryType.Resettable, questCollection => new ResettableQuestStoryController(questCollection));
             _questStories = new List<IQuestStory>();
 
             foreach (QuestStoryConfig questStoryConfig in _questStoryConfigs)
             {
-                //_questStories.Add();
+                _questStories.Add(CreateQuestStory(questStoryConfig));
             }
         }
         private IQuestStory CreateQuestStory(QuestStoryConfig cfg)
