@@ -170,17 +170,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_PrefabInstance: {fileID: 718344596}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &172514689 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
-  m_PrefabInstance: {fileID: 718344596}
+--- !u!1 &174542455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 968758652}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &174542456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 174542455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f54a88d9262bde48924c0d7ae782848, type: 3}
+  m_Script: {fileID: 11500000, guid: cd6ec99c8379e144fb8608bedcae7f5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Transform: {fileID: 430562650}
+  SpriteRenderer: {fileID: 174542458}
+  Collider: {fileID: 174542457}
+  Rigidbody: {fileID: 0}
+  _id: 0
+  _completedColor: {r: 0, g: 1, b: 0, a: 0.39215687}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &174542457 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3769383491797702213, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 968758652}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &174542458 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1285025014272271802, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 968758652}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &208831787 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
@@ -264,17 +287,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_PrefabInstance: {fileID: 968758652}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &430562651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
-  m_PrefabInstance: {fileID: 968758652}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f54a88d9262bde48924c0d7ae782848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &494811576
 GameObject:
   m_ObjectHideFlags: 0
@@ -624,7 +636,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_Name
-      value: Coin (8)
+      value: (QuestStory)Coin (8)
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_RootOrder
@@ -632,11 +644,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.12
+      value: -2.11
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -670,7 +682,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
 --- !u!1001 &866651854
 PrefabInstance:
@@ -738,7 +751,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_Name
-      value: Coin (7)
+      value: (SingleQuest)Coin (7)
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_RootOrder
@@ -746,11 +759,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5500001
+      value: 7.35
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.12
+      value: -2.09
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -784,7 +797,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3001457514548046926, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
 --- !u!4 &1044214916 stripped
 Transform:
@@ -851,10 +865,8 @@ MonoBehaviour:
   - {fileID: 1882077912}
   - {fileID: 1615796343}
   - {fileID: 1686026575}
-  - {fileID: 430562651}
-  - {fileID: 172514689}
   _generatorView: {fileID: 494811580}
-  _singleQuestView: {fileID: 2088424592}
+  _questView: {fileID: 1569652635}
 --- !u!4 &1189301784
 Transform:
   m_ObjectHideFlags: 0
@@ -995,6 +1007,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569652634}
+  - component: {fileID: 1569652635}
   m_Layer: 0
   m_Name: Coins
   m_TagString: Untagged
@@ -1026,6 +1039,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569652635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569652633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66d6a8af32a07e744a0dab6863038a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _singleQuest: {fileID: 174542456}
+  _questObjectViews:
+  - {fileID: 1692474698}
+  - {fileID: 2088424592}
+  _questStoryConfigs:
+  - {fileID: 11400000, guid: 8d7fa51e09e1d4c41b3149c011c90b05, type: 2}
 --- !u!4 &1615796342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
@@ -1229,6 +1260,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+--- !u!1 &1692474697 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 718344596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1692474698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692474697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6ec99c8379e144fb8608bedcae7f5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Transform: {fileID: 172514688}
+  SpriteRenderer: {fileID: 1692474700}
+  Collider: {fileID: 1692474699}
+  Rigidbody: {fileID: 0}
+  _id: 2115
+  _completedColor: {r: 1, g: 0, b: 0, a: 0.39215687}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!58 &1692474699 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3769383491797702213, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 718344596}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1692474700 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1285025014272271802, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
+  m_PrefabInstance: {fileID: 718344596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1725092453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,7 +1347,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1077407229354823502, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_Name
-      value: (Quest)Coin (9)
+      value: (QuestStory)Coin (9)
       objectReference: {fileID: 0}
     - target: {fileID: 2996686239663688189, guid: 28834511f69426d4ea796cf4f442d1ff, type: 3}
       propertyPath: m_RootOrder
@@ -1715,9 +1780,9 @@ MonoBehaviour:
   SpriteRenderer: {fileID: 2088424591}
   Collider: {fileID: 2088424590}
   Rigidbody: {fileID: 0}
-  _id: 0
-  _completedColor: {r: 1, g: 0, b: 0, a: 1}
-  _defaultColor: {r: 0, g: 0, b: 0, a: 0}
+  _id: 1154
+  _completedColor: {r: 1, g: 0, b: 0, a: 0.39215687}
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &2136915146
 GameObject:
   m_ObjectHideFlags: 0
